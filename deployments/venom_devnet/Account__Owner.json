@@ -1,0 +1,10 @@
+{
+    "type": "Account",
+    "address": "0:93f2b1dcdcd50e36b4f792631506f2d433fd73939bd1bfbc1304e6847765d9ea",
+    "signerId": "0",
+    "deploymentName": "Owner",
+    "publicKey": "2000b21aa813fdd051b3e49516905d9a3c0796dd784c9ab2a425f953985e8b4c",
+    "saveAccountParams": {
+        "type": 3
+    }
+}

@@ -3059,6 +3059,95 @@ PUSHCONT {
 IF
 THROW 0
 
+.globl	PairPayload_with_obj_buildSuccessPayload_ca821d98
+.type	PairPayload_with_obj_buildSuccessPayload_ca821d98, @function
+CALL $PairPayload_with_obj_buildSuccessPayload_ca821d98_macro$
+
+.macro PairPayload_with_obj_buildSuccessPayload_ca821d98_macro
+.loc ../contracts/libraries/PairPayload.sol, 718
+PUSH S2
+EQINT 1
+PUSH S3
+EQINT 2
+PUSH S4
+EQINT 3
+PUSH S5
+EQINT 4
+OR
+OR
+OR
+PUSHCONT {
+	.loc ../contracts/libraries/PairPayload.sol, 723
+	DROP
+	.loc ../contracts/libraries/PairPayload.sol, 0
+}
+IFJMP
+.loc ../contracts/libraries/PairPayload.sol, 728
+NEWC
+STSLICECONST xc8
+.loc ../contracts/libraries/PairPayload.sol, 729
+PUSH S3
+STUR 8
+.loc ../contracts/libraries/PairPayload.sol, 730
+XCHG S1, S2
+STREF
+.loc ../contracts/libraries/PairPayload.sol, 733
+SWAP
+NEWC
+STSLICE
+.loc ../contracts/libraries/PairPayload.sol, 735
+ENDC
+SWAP
+STREF
+.loc ../contracts/libraries/PairPayload.sol, 737
+ENDC
+.loc ../contracts/libraries/PairPayload.sol, 0
+
+.globl	PairPayload_no_obj_buildSuccessPayload_ca821d98
+.type	PairPayload_no_obj_buildSuccessPayload_ca821d98, @function
+CALL $PairPayload_no_obj_buildSuccessPayload_ca821d98_macro$
+
+.macro PairPayload_no_obj_buildSuccessPayload_ca821d98_macro
+.loc ../contracts/libraries/PairPayload.sol, 718
+PUSH S2
+EQINT 1
+PUSH S3
+EQINT 2
+PUSH S4
+EQINT 3
+PUSH S5
+EQINT 4
+OR
+OR
+OR
+PUSHCONT {
+	.loc ../contracts/libraries/PairPayload.sol, 723
+	DROP
+	NIP
+	.loc ../contracts/libraries/PairPayload.sol, 0
+}
+IFJMP
+.loc ../contracts/libraries/PairPayload.sol, 728
+NEWC
+STSLICECONST xc8
+.loc ../contracts/libraries/PairPayload.sol, 729
+ROLL 3
+STUR 8
+.loc ../contracts/libraries/PairPayload.sol, 730
+XCHG S1, S2
+STREF
+.loc ../contracts/libraries/PairPayload.sol, 733
+SWAP
+NEWC
+STSLICE
+.loc ../contracts/libraries/PairPayload.sol, 735
+ENDC
+SWAP
+STREF
+.loc ../contracts/libraries/PairPayload.sol, 737
+ENDC
+.loc ../contracts/libraries/PairPayload.sol, 0
+
 .globl	PairPayload_with_obj_buildCancelPayload_d16d279d
 .type	PairPayload_with_obj_buildCancelPayload_d16d279d, @function
 CALL $PairPayload_with_obj_buildCancelPayload_d16d279d_macro$
@@ -3277,95 +3366,6 @@ IF
 .loc ../contracts/libraries/PairPayload.sol, 710
 ENDC
 NIP
-.loc ../contracts/libraries/PairPayload.sol, 0
-
-.globl	PairPayload_with_obj_buildSuccessPayload_ca821d98
-.type	PairPayload_with_obj_buildSuccessPayload_ca821d98, @function
-CALL $PairPayload_with_obj_buildSuccessPayload_ca821d98_macro$
-
-.macro PairPayload_with_obj_buildSuccessPayload_ca821d98_macro
-.loc ../contracts/libraries/PairPayload.sol, 718
-PUSH S2
-EQINT 1
-PUSH S3
-EQINT 2
-PUSH S4
-EQINT 3
-PUSH S5
-EQINT 4
-OR
-OR
-OR
-PUSHCONT {
-	.loc ../contracts/libraries/PairPayload.sol, 723
-	DROP
-	.loc ../contracts/libraries/PairPayload.sol, 0
-}
-IFJMP
-.loc ../contracts/libraries/PairPayload.sol, 728
-NEWC
-STSLICECONST xc8
-.loc ../contracts/libraries/PairPayload.sol, 729
-PUSH S3
-STUR 8
-.loc ../contracts/libraries/PairPayload.sol, 730
-XCHG S1, S2
-STREF
-.loc ../contracts/libraries/PairPayload.sol, 733
-SWAP
-NEWC
-STSLICE
-.loc ../contracts/libraries/PairPayload.sol, 735
-ENDC
-SWAP
-STREF
-.loc ../contracts/libraries/PairPayload.sol, 737
-ENDC
-.loc ../contracts/libraries/PairPayload.sol, 0
-
-.globl	PairPayload_no_obj_buildSuccessPayload_ca821d98
-.type	PairPayload_no_obj_buildSuccessPayload_ca821d98, @function
-CALL $PairPayload_no_obj_buildSuccessPayload_ca821d98_macro$
-
-.macro PairPayload_no_obj_buildSuccessPayload_ca821d98_macro
-.loc ../contracts/libraries/PairPayload.sol, 718
-PUSH S2
-EQINT 1
-PUSH S3
-EQINT 2
-PUSH S4
-EQINT 3
-PUSH S5
-EQINT 4
-OR
-OR
-OR
-PUSHCONT {
-	.loc ../contracts/libraries/PairPayload.sol, 723
-	DROP
-	NIP
-	.loc ../contracts/libraries/PairPayload.sol, 0
-}
-IFJMP
-.loc ../contracts/libraries/PairPayload.sol, 728
-NEWC
-STSLICECONST xc8
-.loc ../contracts/libraries/PairPayload.sol, 729
-ROLL 3
-STUR 8
-.loc ../contracts/libraries/PairPayload.sol, 730
-XCHG S1, S2
-STREF
-.loc ../contracts/libraries/PairPayload.sol, 733
-SWAP
-NEWC
-STSLICE
-.loc ../contracts/libraries/PairPayload.sol, 735
-ENDC
-SWAP
-STREF
-.loc ../contracts/libraries/PairPayload.sol, 737
-ENDC
 .loc ../contracts/libraries/PairPayload.sol, 0
 
 .macro public_function_selector

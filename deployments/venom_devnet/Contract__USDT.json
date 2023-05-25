@@ -1,0 +1,649 @@
+{
+    "type": "Contract",
+    "deploymentName": "USDT",
+    "abi": {
+        "ABI version": 2,
+        "version": "2.2",
+        "header": [
+            "pubkey",
+            "time",
+            "expire"
+        ],
+        "functions": [
+            {
+                "name": "constructor",
+                "inputs": [
+                    {
+                        "name": "initialSupplyTo",
+                        "type": "address"
+                    },
+                    {
+                        "name": "initialSupply",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "deployWalletValue",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "mintDisabled",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "burnByRootDisabled",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "burnPaused",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "remainingGasTo",
+                        "type": "address"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "supportsInterface",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "interfaceID",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "bool"
+                    }
+                ]
+            },
+            {
+                "name": "walletVersion",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "uint32"
+                    }
+                ]
+            },
+            {
+                "name": "platformCode",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "cell"
+                    }
+                ]
+            },
+            {
+                "name": "requestUpgradeWallet",
+                "inputs": [
+                    {
+                        "name": "currentVersion",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "walletOwner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "remainingGasTo",
+                        "type": "address"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "setWalletCode",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "upgrade",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "disableMint",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "bool"
+                    }
+                ]
+            },
+            {
+                "name": "mintDisabled",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "bool"
+                    }
+                ]
+            },
+            {
+                "name": "burnTokens",
+                "inputs": [
+                    {
+                        "name": "amount",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "walletOwner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "remainingGasTo",
+                        "type": "address"
+                    },
+                    {
+                        "name": "callbackTo",
+                        "type": "address"
+                    },
+                    {
+                        "name": "payload",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "disableBurnByRoot",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "bool"
+                    }
+                ]
+            },
+            {
+                "name": "burnByRootDisabled",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "bool"
+                    }
+                ]
+            },
+            {
+                "name": "burnPaused",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "bool"
+                    }
+                ]
+            },
+            {
+                "name": "setBurnPaused",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "paused",
+                        "type": "bool"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "bool"
+                    }
+                ]
+            },
+            {
+                "name": "transferOwnership",
+                "inputs": [
+                    {
+                        "name": "newOwner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "remainingGasTo",
+                        "type": "address"
+                    },
+                    {
+                        "components": [
+                            {
+                                "name": "value",
+                                "type": "uint128"
+                            },
+                            {
+                                "name": "payload",
+                                "type": "cell"
+                            }
+                        ],
+                        "name": "callbacks",
+                        "type": "map(address,tuple)"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "name",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "name": "symbol",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "name": "decimals",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "uint8"
+                    }
+                ]
+            },
+            {
+                "name": "totalSupply",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "uint128"
+                    }
+                ]
+            },
+            {
+                "name": "walletCode",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "cell"
+                    }
+                ]
+            },
+            {
+                "name": "rootOwner",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "address"
+                    }
+                ]
+            },
+            {
+                "name": "walletOf",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "walletOwner",
+                        "type": "address"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "address"
+                    }
+                ]
+            },
+            {
+                "name": "deployWallet",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "walletOwner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "deployWalletValue",
+                        "type": "uint128"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "tokenWallet",
+                        "type": "address"
+                    }
+                ]
+            },
+            {
+                "name": "mint",
+                "inputs": [
+                    {
+                        "name": "amount",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "recipient",
+                        "type": "address"
+                    },
+                    {
+                        "name": "deployWalletValue",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "remainingGasTo",
+                        "type": "address"
+                    },
+                    {
+                        "name": "notify",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "payload",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "acceptBurn",
+                "id": "0x192B51B1",
+                "inputs": [
+                    {
+                        "name": "amount",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "walletOwner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "remainingGasTo",
+                        "type": "address"
+                    },
+                    {
+                        "name": "callbackTo",
+                        "type": "address"
+                    },
+                    {
+                        "name": "payload",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "sendSurplusGas",
+                "inputs": [
+                    {
+                        "name": "to",
+                        "type": "address"
+                    }
+                ],
+                "outputs": []
+            }
+        ],
+        "data": [
+            {
+                "key": 1,
+                "name": "name_",
+                "type": "string"
+            },
+            {
+                "key": 2,
+                "name": "symbol_",
+                "type": "string"
+            },
+            {
+                "key": 3,
+                "name": "decimals_",
+                "type": "uint8"
+            },
+            {
+                "key": 4,
+                "name": "rootOwner_",
+                "type": "address"
+            },
+            {
+                "key": 5,
+                "name": "walletCode_",
+                "type": "cell"
+            },
+            {
+                "key": 6,
+                "name": "randomNonce_",
+                "type": "uint256"
+            },
+            {
+                "key": 7,
+                "name": "deployer_",
+                "type": "address"
+            },
+            {
+                "key": 8,
+                "name": "platformCode_",
+                "type": "cell"
+            }
+        ],
+        "events": [],
+        "fields": [
+            {
+                "name": "_pubkey",
+                "type": "uint256"
+            },
+            {
+                "name": "_timestamp",
+                "type": "uint64"
+            },
+            {
+                "name": "_constructorFlag",
+                "type": "bool"
+            },
+            {
+                "name": "name_",
+                "type": "string"
+            },
+            {
+                "name": "symbol_",
+                "type": "string"
+            },
+            {
+                "name": "decimals_",
+                "type": "uint8"
+            },
+            {
+                "name": "rootOwner_",
+                "type": "address"
+            },
+            {
+                "name": "walletCode_",
+                "type": "cell"
+            },
+            {
+                "name": "totalSupply_",
+                "type": "uint128"
+            },
+            {
+                "name": "burnPaused_",
+                "type": "bool"
+            },
+            {
+                "name": "burnByRootDisabled_",
+                "type": "bool"
+            },
+            {
+                "name": "mintDisabled_",
+                "type": "bool"
+            },
+            {
+                "name": "randomNonce_",
+                "type": "uint256"
+            },
+            {
+                "name": "deployer_",
+                "type": "address"
+            },
+            {
+                "name": "platformCode_",
+                "type": "cell"
+            },
+            {
+                "name": "walletVersion_",
+                "type": "uint32"
+            }
+        ]
+    },
+    "address": "0:1906d466d3f737868ed55e4d7b10119561daefbfa04d5724ab586685e2e1913f",
+    "transaction": {
+        "transaction": {
+            "id": {
+                "lt": "704475000001",
+                "hash": "e94bf46511c99c9b0ca7fb20713d9b2441be87488f5f2d4f9d237bde3006e447"
+            },
+            "prevTransactionId": {
+                "lt": "704471000003",
+                "hash": "46b06e2ba8577b5b8cc8becf08f5a86714035fe00fffc5d4e82aff82683c483a"
+            },
+            "createdAt": 1684990351,
+            "aborted": false,
+            "exitCode": 0,
+            "resultCode": 0,
+            "origStatus": "uninit",
+            "endStatus": "active",
+            "totalFees": "11400501",
+            "inMessage": {
+                "hash": "afce92d2742740c5c03ee5160acb20a25d26ddd73eb18602e77b7d82bdf099d3",
+                "dst": "0:1906d466d3f737868ed55e4d7b10119561daefbfa04d5724ab586685e2e1913f",
+                "value": "0",
+                "bounce": false,
+                "bounced": false,
+                "body": "te6ccgEBAwEA3QAB4doiBptwpiLcWrf6pf4m4GuHmnK5WCH2S50M+Jex7jWa1TeijPsn/mcfT1DF+D/CrBWONguhYKTFem69oJf/I4HIACyGqgT/dBRs+SVFpBdmjwHlt14TJqypCX5U5hei0wAAAGIUUBR6GRu6ckKI+acgAQGDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAgBDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA==",
+                "bodyHash": "f31db9e372787aefac80e3cc4fec5b48dd59c90fd1254d53d7422f400f33aa34"
+            },
+            "outMessages": []
+        },
+        "output": {}
+    },
+    "codeHash": "e8801282233f38ad17fead83aeac1820e40598de98675106b0fd91d9524e9141",
+    "contractName": "TokenRootUpgradeable",
+    "deployContractParams": {
+        "contract": "TokenRootUpgradeable",
+        "constructorParams": {
+            "initialSupplyTo": "0:0000000000000000000000000000000000000000000000000000000000000000",
+            "initialSupply": "0",
+            "deployWalletValue": "0",
+            "mintDisabled": false,
+            "burnByRootDisabled": true,
+            "burnPaused": true,
+            "remainingGasTo": "0:0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "initParams": {
+            "randomNonce_": 33566,
+            "deployer_": "0:0000000000000000000000000000000000000000000000000000000000000000",
+            "name_": "USDT",
+            "symbol_": "USDT",
+            "decimals_": 18,
+            "walletCode_": "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",
+            "rootOwner_": "0:93f2b1dcdcd50e36b4f792631506f2d433fd73939bd1bfbc1304e6847765d9ea",
+            "platformCode_": "te6ccgECGAEAAmwAAgaK2zUXAQQkiu1TIOMDIMD/4wIgwP7jAvILEwQDAgAAA4rtRNDXScMB+GaJ+Gkh2zzTAAGfgQIA1xgg+QFY+EL5EPKo3tM/AfhDIbnytCD4I4ED6KiCCBt3QKC58rT4Y9MfAds88jwRDQUDUu1E0NdJwwH4ZiLQ0wP6QDD4aak4ANwhxwDjAiHXDR/yvCHjAwHbPPI8EhIFARQgghAVoDj7uuMCBgSQMPhCbuMA+EbycyGW1NMf1NHQk9TTH+L6QNTR0PpA0fhJ+ErHBSCOgN+OgI4UIMjPhQjOgG/PQMmBAICmILUH+wDiXwTbPPIADQoHFgEIXSLbPAgCfPhKyM74SwHOcAHLf3AByx8Syx/O+EGIyM+OK2zWzM7JAcwh+wQB0CCLOK2zWMcFk9dN0N7XTNDtHu1Tyds8FwkABPACAR4wIfpCbxPXC//DACCOgN4LARAwIds8+EnHBQwBfnDIy/9wbYBA9EP4SnFYgED0FgFyWIBA9BbI9ADJ+EGIyM+OK2zWzM7JyM+EgPQA9ADPgcn5AMjPigBAy//J0BcCFu1E0NdJwgGOgOMNDw4ANO1E0NP/0z/TADH6QNTR0PpA0fhr+Gr4Y/hiAlRw7UTQ9AVxIYBA9A6OgN9yIoBA9A6OgN/4a/hqgED0DvK91wv/+GJw+GMQEAECiREAQ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAACvhG8uBMAgr0pCD0oRUUABRzb2wgMC41Ny4xARigAAAAAjDbPPgP8gAWACz4SvhD+ELIy//LP8+DzvhLyM7Nye1UAAwg+GHtHtk="
+        },
+        "publicKey": "2000b21aa813fdd051b3e49516905d9a3c0796dd784c9ab2a425f953985e8b4c",
+        "value": "2000000000"
+    }
+}

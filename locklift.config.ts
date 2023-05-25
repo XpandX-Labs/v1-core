@@ -1,6 +1,8 @@
 import {LockliftConfig} from "locklift";
 import {FactorySource} from "./build/factorySource";
-import {SimpleGiver, GiverWallet} from "./giverSettings";
+import "locklift-verifier";
+import "locklift-deploy";
+import { Deployments } from "locklift-deploy";
 
 
 declare global {
@@ -16,6 +18,13 @@ const VENOM_TESTNET_TRACE_ENDPOINT =
 
 // Create your own link on https://dashboard.evercloud.dev/
 const MAIN_NET_NETWORK_ENDPOINT = process.env.MAIN_NET_NETWORK_ENDPOINT || "https://mainnet.evercloud.dev/XXX/graphql";
+
+declare module "locklift" {
+    //@ts-ignore
+    export interface Locklift {
+        deployments: Deployments<FactorySource>;
+    }
+}
 
 const config: LockliftConfig = {
     compiler: {
@@ -170,6 +179,7 @@ const config: LockliftConfig = {
                 phrase: 'original dilemma depth east shift wood flee special ten venture enforce slender',
                 amount: 20,
             },
+            deploy:  ['venom_devnet/']
         },
         main: {
             // Specify connection settings for https://github.com/broxus/everscale-standalone-client/
@@ -201,6 +211,11 @@ const config: LockliftConfig = {
     },
     mocha: {
         timeout: 2000000,
+    },
+    verifier: {
+        verifierVersion: "latest", // contract verifier binary, see https://github.com/broxus/everscan-verify/releases
+        apiKey: "APIKEY",
+        secretKey: "SECRET",
     },
 };
 

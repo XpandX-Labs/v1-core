@@ -1,0 +1,332 @@
+{
+    "type": "Contract",
+    "deploymentName": "TokenFactory",
+    "abi": {
+        "ABI version": 2,
+        "version": "2.2",
+        "header": [
+            "time"
+        ],
+        "functions": [
+            {
+                "name": "constructor",
+                "inputs": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "owner",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "address"
+                    }
+                ]
+            },
+            {
+                "name": "pendingOwner",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "address"
+                    }
+                ]
+            },
+            {
+                "name": "rootCode",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "cell"
+                    }
+                ]
+            },
+            {
+                "name": "walletCode",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "cell"
+                    }
+                ]
+            },
+            {
+                "name": "walletPlatformCode",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "cell"
+                    }
+                ]
+            },
+            {
+                "name": "createToken",
+                "inputs": [
+                    {
+                        "name": "callId",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "symbol",
+                        "type": "string"
+                    },
+                    {
+                        "name": "decimals",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "initialSupplyTo",
+                        "type": "address"
+                    },
+                    {
+                        "name": "initialSupply",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "deployWalletValue",
+                        "type": "uint128"
+                    },
+                    {
+                        "name": "mintDisabled",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "burnByRootDisabled",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "burnPaused",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "remainingGasTo",
+                        "type": "address"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "transferOwner",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "newOwner",
+                        "type": "address"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "address"
+                    }
+                ]
+            },
+            {
+                "name": "acceptOwner",
+                "inputs": [
+                    {
+                        "name": "answerId",
+                        "type": "uint32"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "value0",
+                        "type": "address"
+                    }
+                ]
+            },
+            {
+                "name": "setRootCode",
+                "inputs": [
+                    {
+                        "name": "_rootCode",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "setWalletCode",
+                "inputs": [
+                    {
+                        "name": "_walletCode",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "setWalletPlatformCode",
+                "inputs": [
+                    {
+                        "name": "_walletPlatformCode",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            },
+            {
+                "name": "upgrade",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "type": "cell"
+                    }
+                ],
+                "outputs": []
+            }
+        ],
+        "data": [
+            {
+                "key": 1,
+                "name": "randomNonce_",
+                "type": "uint32"
+            }
+        ],
+        "events": [
+            {
+                "name": "TokenCreated",
+                "inputs": [
+                    {
+                        "name": "tokenRoot",
+                        "type": "address"
+                    }
+                ],
+                "outputs": []
+            }
+        ],
+        "fields": [
+            {
+                "name": "_pubkey",
+                "type": "uint256"
+            },
+            {
+                "name": "_timestamp",
+                "type": "uint64"
+            },
+            {
+                "name": "_constructorFlag",
+                "type": "bool"
+            },
+            {
+                "name": "randomNonce_",
+                "type": "uint32"
+            },
+            {
+                "name": "owner_",
+                "type": "address"
+            },
+            {
+                "name": "pendingOwner_",
+                "type": "address"
+            },
+            {
+                "name": "rootCode_",
+                "type": "cell"
+            },
+            {
+                "name": "walletCode_",
+                "type": "cell"
+            },
+            {
+                "name": "walletPlatformCode_",
+                "type": "cell"
+            }
+        ]
+    },
+    "address": "0:feca6a36f59471a8b3534b78736e66b6bf9a674052a732e7849354594e04026c",
+    "transaction": {
+        "transaction": {
+            "id": {
+                "lt": "703291000001",
+                "hash": "4e17a05ca55334914d4454d7db40d2c4c141fab9bf5c81134c04ee218567fa63"
+            },
+            "prevTransactionId": {
+                "lt": "703288000003",
+                "hash": "688788186cb37fd20c8725733ad1a2fa756e06927e5f040658cd8b11785dc45b"
+            },
+            "createdAt": 1684987142,
+            "aborted": false,
+            "exitCode": 0,
+            "resultCode": 0,
+            "origStatus": "uninit",
+            "endStatus": "active",
+            "totalFees": "4244101",
+            "inMessage": {
+                "hash": "d356cb0f188b6cfe035ec02c6f02be10e88cabafe4146799dea8859920a17eb8",
+                "dst": "0:feca6a36f59471a8b3534b78736e66b6bf9a674052a732e7849354594e04026c",
+                "value": "0",
+                "bounce": false,
+                "bounced": false,
+                "body": "te6ccgEBAgEAdAABmfPcgbykGz6RvMeBPvoPp//iuSjHV0ZhUIdo27udSv9g0ntdvyBv/ooF7evdAi+y30gNFtEo4dQTg8jh5TE3LwUAAADEKIeu+aOrKm5AAQBDgBJ+VjubmqHG1p7yTGKg3lqGf65yc3o394JgnNCO7Ls9UA==",
+                "bodyHash": "35cbdcac4276c0aca10d977d6bf152e922950a1ff503427cdef8bd9206c57829"
+            },
+            "outMessages": [
+                {
+                    "hash": "e5a7f990ec299dabf315f3c8a16a3ed572cf57e2a418de9e092b03bd03216cc7",
+                    "src": "0:feca6a36f59471a8b3534b78736e66b6bf9a674052a732e7849354594e04026c",
+                    "dst": "0:93f2b1dcdcd50e36b4f792631506f2d433fd73939bd1bfbc1304e6847765d9ea",
+                    "value": "995755899",
+                    "bounce": true,
+                    "bounced": false
+                }
+            ]
+        },
+        "output": {}
+    },
+    "codeHash": "64a8917620ac5285ea743fedbc7be37495a06b3a3997bc9da8965c94133fb29a",
+    "contractName": "TokenFactory",
+    "deployContractParams": {
+        "contract": "TokenFactory",
+        "constructorParams": {
+            "_owner": "0:93f2b1dcdcd50e36b4f792631506f2d433fd73939bd1bfbc1304e6847765d9ea"
+        },
+        "initParams": {
+            "randomNonce_": 14386
+        },
+        "publicKey": "2000b21aa813fdd051b3e49516905d9a3c0796dd784c9ab2a425f953985e8b4c",
+        "value": "2000000000"
+    }
+}
