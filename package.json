@@ -1,0 +1,32 @@
+{
+  "name": "locklift-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "npx locklift test --network local",
+    "deploy:all": "npx locklift run --disable-build --script v2/scripts/prod/deploy.ts --config locklift.config.ts --network venom_testnet"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.1.7",
+    "chai": "^4.3.7",
+    "everscale-standalone-client": "^2.1.18",
+    "locklift": "^2.5.4",
+    "prettier": "^2.8.8",
+    "tip3": "git://github.com/broxus/ton-eth-bridge-token-contracts#d3c1cd920c0320ffaab03b54c878dd0e06fed3c7",
+    "ton-wton": "git://github.com/broxus/ton-wton#42a5aaf95b51b8a365d40ef3e95c1a6931f0a90c",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@broxus/contracts": "^1.1.1",
+    "bignumber.js": "^9.1.1",
+    "everscale-inpage-provider": "^0.3.61",
+    "locklift-deploy": "^1.0.3",
+    "locklift-verifier": "^1.0.4",
+    "mocha-logger": "^1.0.8"
+  }
+}
