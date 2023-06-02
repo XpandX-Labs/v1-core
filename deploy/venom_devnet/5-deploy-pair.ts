@@ -46,21 +46,84 @@ export default async () => {
                         upgradeable: true,
                     };
             const pair = { left: tokenLeft.symbol, right: tokenRight.symbol };
+            const tokens = ['WVENOM', 'DAI', 'WETH', 'BNB', 'WTD']
 
             //dex root
             const Xpandax = locklift.deployments.getContract('Xpandax');
+            const WVENOM = locklift.deployments.getContract('WVENOM');
+            const DAI = locklift.deployments.getContract('DAI');
+            const WETH = locklift.deployments.getContract('WETH');
+            const BNB = locklift.deployments.getContract('BNB');
+            const WTD = locklift.deployments.getContract('WTD');
             const USDT = locklift.deployments.getContract('USDT');
 
+            //
+            // const tx = await dexRoot.methods
+            //     .deployPair({
+            //         left_root: Xpandax.address,
+            //         right_root: USDT.address,
+            //         send_gas_to: owner.account.address,
+            //     })
+            //     .send({
+            //         from: owner.account.address,
+            //         amount: toNano(0.5),
+            //     });
 
-            const tx = await dexRoot.methods
+            let tx = await dexRoot.methods
                 .deployPair({
-                    left_root: Xpandax.address,
+                    left_root: WVENOM.address,
                     right_root: USDT.address,
                     send_gas_to: owner.account.address,
                 })
                 .send({
                     from: owner.account.address,
-                    amount: toNano(15),
+                    amount: toNano(0.5),
+                });
+
+
+            tx = await dexRoot.methods
+                .deployPair({
+                    left_root: DAI.address,
+                    right_root: USDT.address,
+                    send_gas_to: owner.account.address,
+                })
+                .send({
+                    from: owner.account.address,
+                    amount: toNano(0.5),
+                });
+
+
+            tx = await dexRoot.methods
+                .deployPair({
+                    left_root: WETH.address,
+                    right_root: USDT.address,
+                    send_gas_to: owner.account.address,
+                })
+                .send({
+                    from: owner.account.address,
+                    amount: toNano(0.5),
+                });
+
+            tx = await dexRoot.methods
+                .deployPair({
+                    left_root: BNB.address,
+                    right_root: USDT.address,
+                    send_gas_to: owner.account.address,
+                })
+                .send({
+                    from: owner.account.address,
+                    amount: toNano(0.5),
+                });
+
+            tx = await dexRoot.methods
+                .deployPair({
+                    left_root: WTD.address,
+                    right_root: USDT.address,
+                    send_gas_to: owner.account.address,
+                })
+                .send({
+                    from: owner.account.address,
+                    amount: toNano(0.5),
                 });
 
             const dexPairFooBarAddress = await dexRoot.methods
