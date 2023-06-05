@@ -19,7 +19,14 @@ export default async () => {
 
 
         //deploy
-        const tokens = ['Xpandax', 'USDT', 'USDC']
+        // const tokens = ['Xpandax', 'USDT', 'USDC']
+        //VENOM
+        // WVENOM
+        // DAI
+        // WETH
+        // BNB
+        // WTD
+        const tokens = ['WVENOM', 'DAI', 'WETH', 'BNB', 'WTD']
 
         for(const tokenID of tokens) {
             const tokenRoot = await locklift.deployments.deploy({
