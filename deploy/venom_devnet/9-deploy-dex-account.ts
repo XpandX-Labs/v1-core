@@ -20,7 +20,7 @@ export default async () => {
             send_gas_to: owner.account.address,
         }).send({
             from: owner.account.address,
-            amount: toNano(1),
+            amount: toNano(4),
         });
 
         const dexAccountNAddress = await dexRoot.methods

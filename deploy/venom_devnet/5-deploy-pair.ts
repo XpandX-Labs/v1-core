@@ -58,18 +58,18 @@ export default async () => {
             const USDT = locklift.deployments.getContract('USDT');
 
             //
-            // const tx = await dexRoot.methods
-            //     .deployPair({
-            //         left_root: Xpandax.address,
-            //         right_root: USDT.address,
-            //         send_gas_to: owner.account.address,
-            //     })
-            //     .send({
-            //         from: owner.account.address,
-            //         amount: toNano(0.5),
-            //     });
-
             let tx = await dexRoot.methods
+                .deployPair({
+                    left_root: Xpandax.address,
+                    right_root: USDT.address,
+                    send_gas_to: owner.account.address,
+                })
+                .send({
+                    from: owner.account.address,
+                    amount: toNano(15),
+                });
+            console.log("tx id Xpandax", tx.id)
+            tx = await dexRoot.methods
                 .deployPair({
                     left_root: WVENOM.address,
                     right_root: USDT.address,
@@ -77,8 +77,9 @@ export default async () => {
                 })
                 .send({
                     from: owner.account.address,
-                    amount: toNano(0.5),
+                    amount: toNano(15),
                 });
+            console.log("tx id WVENOM", tx.id)
 
 
             tx = await dexRoot.methods
@@ -89,8 +90,9 @@ export default async () => {
                 })
                 .send({
                     from: owner.account.address,
-                    amount: toNano(0.5),
+                    amount: toNano(15),
                 });
+            console.log("tx id DAI", tx.id)
 
 
             tx = await dexRoot.methods
@@ -101,8 +103,10 @@ export default async () => {
                 })
                 .send({
                     from: owner.account.address,
-                    amount: toNano(0.5),
+                    amount: toNano(15),
                 });
+            console.log("tx id WETH", tx.id)
+
 
             tx = await dexRoot.methods
                 .deployPair({
@@ -112,8 +116,10 @@ export default async () => {
                 })
                 .send({
                     from: owner.account.address,
-                    amount: toNano(0.5),
+                    amount: toNano(15),
                 });
+            console.log("tx id BNB", tx.id)
+
 
             tx = await dexRoot.methods
                 .deployPair({
@@ -123,9 +129,11 @@ export default async () => {
                 })
                 .send({
                     from: owner.account.address,
-                    amount: toNano(0.5),
+                    amount: toNano(15),
                 });
+            console.log("tx id WTD", tx.id)
 
+            //
             const dexPairFooBarAddress = await dexRoot.methods
                 .getExpectedPairAddress({
                     answerId: 0,
@@ -139,10 +147,10 @@ export default async () => {
                 'DexPair',
                 dexPairFooBarAddress.value0,
             );
-
+            console.log("dexPairXpandaxUSDT", dexPairXpandaxUSDT.address);
             const version = (
-                await dexPairXpandaxUSDT.methods.getVersion({ answerId: 0 }).call()
-            ).version;
+                await dexPairXpandaxUSDT.methods.getRoot({ answerId: 0 }).call()
+            );
             console.log(`DexPool${pair.left}${pair.right} version = ${version}`);
 
             const active = (

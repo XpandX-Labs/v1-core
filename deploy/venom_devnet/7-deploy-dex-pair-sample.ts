@@ -32,10 +32,7 @@ export default async () => {
                     constructorParams: {
                     },
                     initParams: {
-                        randomNonce_: getRandomNonce(),
-                        deployer_: owner.account.address,
-                        walletCode_: DexPair.code,
-                        rootOwner_: owner.account.address,
+                        randomNonce_: getRandomNonce()
                     },
                     publicKey: signer.publicKey,
                     value: toNano(0.1),

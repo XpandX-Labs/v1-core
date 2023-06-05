@@ -13,7 +13,7 @@ export default async () => {
 
         //contracts
         const DexPlatform = await locklift.factory.getContractArtifacts('DexPlatform');
-        const DexAccount = await locklift.factory.getContractArtifacts('DexRoot');
+        const DexAccount = await locklift.factory.getContractArtifacts('DexAccount');
         const DexPair = await locklift.factory.getContractArtifacts('DexPair');
         const DexVaultLpTokenPendingV2 = await locklift.factory.getContractArtifacts('DexVaultLpTokenPendingV2');
         const DexTokenVault = await locklift.factory.getContractArtifacts('DexTokenVault');
