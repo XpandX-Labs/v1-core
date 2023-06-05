@@ -16,5 +16,5 @@ Folder: deployments/venom_devnet
 
 ## List of Tokens 
 
-- Folder: deployment
-- Supported Tokens: Xpandax, USDT, USDC 
+- Folder: deployment/venom_devnet
+- Supported Tokens: WVENOM, BNB, DAI, WTD, XPX, USDT, USDC 
