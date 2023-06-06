@@ -38,21 +38,6 @@ export default async () => {
 
         const dexAccount = await locklift.factory.getDeployedContract('DexAccount', dexAccountNAddress.value0)
 
-        // transfer token
-        // console.log("dex account", dexAccount.methods.depositLiquidity)
-
-        // const wallet = await contractXpandx.methods.walletOf({
-        //     answerId: 0,
-        //     walletOwner: owner.account.address
-        // }).call()
-
-
-        // const wallets = await dexAccount.methods.getWalletData({
-        //     token_root: contractXpandx.address,
-        //     answerId: 0,
-        // }).call()
-        console.log("wallets", dexAccount)
-
         const dexPairFooBarAddress = await dexRoot.methods
             .getExpectedPairAddress({
                 answerId: 0,
@@ -72,31 +57,36 @@ export default async () => {
         ).version;
         console.log(`DexPool version = ${version}`);
 
-        // const test = dexAccount.methodsAbi;
-        // console.log("test", test);
-        const addPair = await dexAccount.methods.addPair({
-            left_root:contractXpandx.address,
-            right_root: contractUSDT.address
-        }).send({
-            from: owner.account.address,
-            amount: toNano(5)
-        })
-        console.log("pair", addPair.id)
+
+        console.log("pair", dexPairXpandaxUSDT.address)
+
+        const walletTokenUSDT = await dexAccount.methods.getWalletData({
+            answerId: 0,
+            token_root: contractUSDT.address
+        }).call();
+        console.log("wallets", walletTokenUSDT);
+
+        const walletTokenXpandaX = await dexAccount.methods.getWalletData({
+            answerId: 0,
+            token_root: contractXpandx.address
+        }).call();
+        console.log("walletTokenXpandaX", walletTokenXpandaX);
+
 
         const tx = await dexAccount.methods.depositLiquidity({
             call_id: getRandomNonce(),
             left_root: contractXpandx.address,
-            left_amount: new BigNumber('1000').shiftedBy(18).toString(),
+            left_amount: new BigNumber('100').shiftedBy(18).toString(),
             right_root: contractUSDT.address,
             right_amount: new BigNumber('100').shiftedBy(18).toString(),
-            expected_lp_root: dexPairXpandaxUSDT.address,
+            expected_lp_root: new Address('0:54c8d9f39768c5a9e0f93e2b39c91132a535730d8dcbad49a7d0027291dce9d8'),
             auto_change: true,
             send_gas_to: dexAccount.address
         }).send({
             from: owner.account.address,
-            amount: toNano(15)
+            amount: toNano(1.1)
         })
-        //
+
         console.log("transaction", tx.id)
 
     } catch (err) {
