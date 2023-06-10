@@ -19,8 +19,7 @@ Folder: deployments/venom_devnet
 - Folder: deployment
 - Supported Tokens: Xpandax, USDT, USDC 
 
-####
-Flow deposit liquidity:
+#### Flow deposit liquidity:
 
 1. Create Dex account:
    - Contract DexRoot, call function `getExpectedAccountAddress`
@@ -39,7 +38,6 @@ Flow deposit liquidity:
 - Need to transfer token from 2 tokens.
 3. From contract DexAccount, use function `depositLiquidiy` to deposit
 
-####
-Flow exchange
+#### Flow exchange
 
 1. Go to contract DexAccount and use function `exchange`
