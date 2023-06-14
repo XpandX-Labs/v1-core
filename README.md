@@ -6,9 +6,13 @@ Visit us: [https://xpandx.xyz/](https://xpandx.xyz/)
 
 [Locklift](https://github.com/broxus/locklift/) is required to build, test, run and maintain the smart contract.
 
+## Contributing
+If you are interested in contributing, we kindly request you to refer to our [contribution guidelines](./CONTRIBUTING.md) for detailed information and instructions. 
+
+
 ## Deployed Contracts
 
-Folder: deployments/venom_devnet
+Folder: [deployments/venom_devnet](/deployments/venom_devnet/)
 
 ## List of devnet Tokens 
 
